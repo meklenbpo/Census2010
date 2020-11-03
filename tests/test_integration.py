@@ -7,7 +7,3 @@ from census2010 import parser
 from census2010 import merger
 from census2010 import geocoder
 from census2010 import formatter
-
-
-
-
