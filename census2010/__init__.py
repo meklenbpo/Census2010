@@ -21,3 +21,9 @@ merged dataframe.
 5. *Formatter* - formats the geocoded dataset into a well-presented
 Excel table.
 """
+
+from .downloader import download
+from .parser import parse
+from .merger import merge
+from .geocoder import geocode
+from .formatter import format_to_excel

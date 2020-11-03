@@ -11,3 +11,12 @@ Formatter sub-package provides tools to:
 3. Format colors/fonts/widths etc.
 4. Save as an Excel spreadsheet file.
 """
+
+import pandas as pd
+
+
+def format_to_excel(src_df: pd.DataFrame, excel_fn: str):
+    """
+    Take a merged and geocoded DataFrame, format and save it to Excel
+    format spreadsheet file.
+    """

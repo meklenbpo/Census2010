@@ -11,3 +11,13 @@ Merger sub-package provides tools to:
 included
 3. save the merged dataframe to disk
 """
+
+import pandas as pd
+
+
+def merge(list_of_dfs: list) -> pd.DataFrame:
+    """
+    Take a list of parsed datasets and merge it into one well-formed
+    dataset.
+    """
+    return pd.DataFrame()

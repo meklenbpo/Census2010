@@ -12,3 +12,13 @@ pandas dataframe
 - filter out irrelevant data
 - save the filtered dataset as a pandas-compatible CSV/feather file
 """
+
+import pandas as pd
+
+
+def parse(html: str) -> pd.DataFrame:
+    """
+    Take a raw HTML string, process it and return a filtered version,
+    converted to a pandas Dataframe.
+    """
+    return pd.DataFrame()

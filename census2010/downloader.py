@@ -12,3 +12,10 @@ Downloader subpackage provides tools to:
 4. Extract the HTML data
 5. Save HTML to disk
 """
+
+def download(indicator_code: str, oblast_code: str) -> str:
+    """
+    Download an HTML table of a specified indicator for a specified
+    oblast and return it as string.
+    """
+    return ''
