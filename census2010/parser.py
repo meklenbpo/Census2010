@@ -22,3 +22,9 @@ def parse(html: str) -> pd.DataFrame:
     converted to a pandas Dataframe.
     """
     return pd.DataFrame()
+
+def parse_all(src_directory: str, dest_directory: str):
+    """
+    Scan `src_directory` for unparsed raw HTML files, parse each of them
+    and save parsed versions into `dest_directory`.
+    """

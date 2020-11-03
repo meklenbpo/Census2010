@@ -22,8 +22,8 @@ merged dataframe.
 Excel table.
 """
 
-from .downloader import download
-from .parser import parse
+from .downloader import download, download_all
+from .parser import parse, parse_all
 from .merger import merge
 from .geocoder import geocode
 from .formatter import format_to_excel

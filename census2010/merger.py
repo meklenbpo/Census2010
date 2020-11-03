@@ -12,12 +12,8 @@ included
 3. save the merged dataframe to disk
 """
 
-import pandas as pd
-
-
-def merge(list_of_dfs: list) -> pd.DataFrame:
+def merge(src_directory: str, dest_filename: str):
     """
-    Take a list of parsed datasets and merge it into one well-formed
-    dataset.
+    Scan `src_directory` folder for parsed dataframes, merge them into
+    one well-formed dataset and save as a pandas-compatible file.
     """
-    return pd.DataFrame()

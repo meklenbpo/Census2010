@@ -10,14 +10,10 @@ Geocoder sub-package provides tools to:
 values - municipality name, oblast code
 """
 
-import pandas as pd
 
-
-def geocode(df: pd.DataFrame, obl_code_column: str,
-                              muni_name_column: str) -> pd.DataFrame:
+def geocode(src_fn: str, dest_fn: str):
     """
-    Take a pandas DataFrame with specified name and oblast code columns,
-    assign geocodes to each lines and return a new DataFrame with
-    additional geocode column.
+    Load a pandas-compatible DataFrame of municipality data, assign
+    geocodes to each line and save a new DataFrame with an additional
+    geocode column.
     """
-    return pd.DataFrame()

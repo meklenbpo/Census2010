@@ -20,3 +20,4 @@ def format_to_excel(src_df: pd.DataFrame, excel_fn: str):
     Take a merged and geocoded DataFrame, format and save it to Excel
     format spreadsheet file.
     """
+    raise FileNotFoundError(f'{excel_fn} not found.')

@@ -19,3 +19,9 @@ def download(indicator_code: str, oblast_code: str) -> str:
     oblast and return it as string.
     """
     return ''
+
+def download_all(save_directory: str):
+    """
+    Consequently download every indicator for every oblast and save
+    obtained tables as separate files to a specified folder.
+    """
