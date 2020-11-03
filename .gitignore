@@ -1,0 +1,10 @@
+# virtual environment
+v
+
+# Python caches
+.pytest_cache
+__pycache__
+*.egg-info
+
+# VSCode stuff
+.pylintrc
