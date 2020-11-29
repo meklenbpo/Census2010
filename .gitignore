@@ -15,3 +15,6 @@ __pycache__
 # Data
 data
 output
+
+# Temp files
+*.swp

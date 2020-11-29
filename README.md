@@ -33,14 +33,17 @@ In order to make downloaded (and imported) data convenient to work with we intro
 - proper HTML - will add a valid HTML header (including encoding metadata, table header tag etc.), footer and an embedded CSS stylesheet.
 - pandas csv - will extract valuable information from HTML table, standardize it and save as a pandas-readable CSV format DataFrame.
 
+Post-processing is implemented as `post-processing` module.
+
 
 Inclusion pipeline
 ------------------
 
-At this point we have a folder of files that can be identified by their region/indicator codes in a well-formed, readable CSV format. However, not all of them can be imported into the final table as they are. Different region/indicator pairs have different problems that prevent them from being imported:
+At this point (once the post-processing module has done its job) we have a folder of files that can be identified by their region/indicator codes in a well-formed, readable CSV format. However, not all of them can be imported into the final table as they are. Different region/indicator pairs have different problems that prevent them from being imported:
 - some region/indicator combinations have no data at all and as such are not even present as files (e.g. 40_ndfl doesn't exist as Saint Petersburg have failed to publish the personal tax statistics.
-- where data is available sometimes it is only present on rayon-level
-- alternatively data may be present on municipal level, but not all municiaplities are present in the list
+- data is limited:
+  - where data _is_ available sometimes it is only present on rayon-level
+  - alternatively data may be present on municipal level, but not all municiaplities are present in the list
 - some tables are malformed (e.g. 64 - Sakhalinskaya oblast, but maybe others too) and need reformatting before they can be imported
 - some tables have more than one data series (columns). For example - age/gender groups have a separate column for each of the groups, ethnicity data has a separate column for each ethnicity, nurses and doctors data have separate state/private columns and an additional aggregate column. Some of those columns can be imported into the final table as they are, some need to recalculated, some even interpolated.
 - many tables are downloaded at years different from 2010, so they need to be adjusted to the target year.
