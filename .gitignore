@@ -1,5 +1,8 @@
+# MacOS stuff
+.DS_Store
+
 # Virtual environment
-v
+venv
 
 # Python caches
 .pytest_cache
@@ -8,3 +11,7 @@ __pycache__
 
 # VSCode stuff
 .pylintrc
+
+# Data
+data
+output
