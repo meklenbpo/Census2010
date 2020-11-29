@@ -50,43 +50,17 @@ At this point (once the post-processing module has done its job) we have a folde
 
 In order to make all data series ready for importing we implement `parser` module with the following functionality:
 
-1. if a data file exists:
-     skip
-   else if the file doesn't exist:
-     skip
-2. if the data is detailed:
-     skip
-   else if the data is limited:
-     augment the data file
-3. if the data is well-formed:
-     skip
-   else if the data is malformed:
-     reformat the data file
-4. if the data file has exactly one data series:
-     skip
-   else if the data has more than one series:
-     if data = 'ethnicity' or 'age groups':
-       split data to sub-indicators (each with a single series)
-     else if data = 'wages' or 'workers':
-       recalculate wages and workers into a single series
-     else if data = 'doctors' or 'nurses':
-       filter redundant columns
-5. if data year is 2010:
-     move to the ready folder
-   else if data year != 2010:
-     if data year is acceptable:
-       move to the ready folder
-     else:
-       shift data to 2010
-       move to the ready folder
+1. if a data file exists - skip, else if the file doesn't exist - also skip
+2. if the data is detailed - skip, else if the data is limited - `augment` the data file
+3. if the data is well-formed - skip, else if the data is malformed - `reformat` the data file
+4. if the data file has exactly one data series - skip, else if the data has more than one series:
+   - if data = 'ethnicity' or 'age groups' - `split` data to sub-indicators (each with a single series)
+   - else if data = 'wages' or 'workers' - `recalculate wages` and workers into a single series
+   - else if data = 'doctors' or 'nurses' - `filter` redundant columns
+5. if data year is 2010 - `move to the ready folder`, 
+   - else if data year != 2010 & if data year is acceptable - `move to the ready folder`, else - `shift` data to 2010 and move to the ready folder
 
-Given the above we need to implement the following functions:
-1. `augment` the single-series indicator based on another indicator
-2. `reformat` the malformed data file
-3. `split` multi-series data into separate sub-indicators (`filter` unnecessary series)
-4. `calculate wages` single series based on workers/wages indicator dataframes
-5. `shift` data to 2010
-6. `move ready` data to the designated folder
+Marked above are functions that need to be implemented in the `parser` module.
 
 Once the above functionality have been implemented and parser has done its job, we will have a folder of single-series indicators, part of which can be directly included into the final table, and the other part is ready to be put on a map and interpolated.
 
